@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<h1 id="t">...</h1>
+<button onclick="setLang('kz')">KZ</button>
+<button onclick="setLang('ru')">RU</button>
+<script>
+function setLang(l){
+ fetch('/api/lang/'+l)
+ .then(r=>r.json())
+ .then(d=>document.getElementById('t').innerText=d.title)
+}
+</script>
+</body>
+</html>
